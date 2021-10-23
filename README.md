@@ -1,4 +1,4 @@
-# Realtime NEXT JS & Firebase w/ CRUD
+# Realtime NEXT JS & Firebase w/ CRUD Functionality
 
 ယခု Project ကိုလေးကို **React Library (17.0.2)** ကိုအသုံးပြုထားပြီး၊ **Next Js Framework Version (11.1.2)** နှင့် **Firebase Websion Version (^9.1.3)** ဖြင့် ပေါင်းစပ်ရေးသားထားကာ UI ဒီဇိုင်း Framework အနေနဲ့ကတော့ **Material UI - MUI (^5.0.4)** ဖြင့် ပေါင်းစပ်ဖန်တီးရေးဆွဲထားတာဖြစ်ပါတယ်။
 
@@ -10,7 +10,7 @@ React ရဲ့ Context Api အသုံးပြုထားပြီး Create
 
 
 
-[Check Demo](https://i.imgur.com/f8IlEVv.png)
+[Check Demo](https://chen-crud.vercel.app)
 
 ![နမူနာပုံ](https://i.imgur.com/f8IlEVv.png)
 
