@@ -10,7 +10,7 @@ React ရဲ့ Context Api အသုံးပြုထားပြီး Create
 
 
 
-[Check Demo](https://chen-crud.vercel.app)
+[Check Demo](https://bit.ly/2ZhCvKZ)
 
 ![နမူနာပုံ](https://i.imgur.com/f8IlEVv.png)
 
