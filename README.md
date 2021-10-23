@@ -8,11 +8,11 @@ React ရဲ့ Context Api အသုံးပြုထားပြီး Create
 
 နမူနာ Live လွှင့်ထားတာကိုကြည့်ရှုနိုင်အောင်လို့ ပုံနှင့်တစ်ကွ Deploy လုပ်ထားတဲ့ Live Demo Url လေးကိုလည်း အလည်အပတ်သွားရောက်ပြီး ကြည့်ရှုနိုင်ပါတယ်။
 
+**[Check Demo](https://bit.ly/2ZhCvKZ)**
 
-
-[Check Demo](https://bit.ly/2ZhCvKZ)
-
-![နမူနာပုံ](https://i.imgur.com/f8IlEVv.png)
+<p align="center">
+<img src="https://i.imgur.com/f8IlEVv.png" />
+</p>
 
 #### Installation
 
@@ -20,7 +20,7 @@ React ရဲ့ Context Api အသုံးပြုထားပြီး Create
 yarn or npm install
 ```
 
-#### To run this project 
+#### To run this project
 
 ```
 yarn start or npm run start
