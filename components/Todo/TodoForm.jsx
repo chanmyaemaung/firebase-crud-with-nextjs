@@ -8,7 +8,8 @@ import {
 } from 'firebase/firestore'
 import { db } from '@firebase/index'
 import { useContext, useEffect, useRef } from 'react'
-import { TodoContext } from '@context/index'
+import { TodoContext } from '@context/MyTodoContext'
+import { useAuth } from '@context/Auth'
 function TodoForm() {
 	// * (1, 2) Context Api ထဲက သတ်မှတ်ထားခဲ့ထဲ့ ဖန်ရှင်ကို ပြန်ခေါ်သုံးထားခြင်း
 	const { showAlert, todos, setTodos } = useContext(TodoContext)
@@ -16,13 +17,19 @@ function TodoForm() {
 	// * (4) ဒီကောင်လေးကတော့ ဖောင်ထဲမှာရှိတဲ့ input တန်ဖိုးတွေကို ဆွဲထုတ်ဖို့ပဲဖြစ်တယ်
 	const inputRef = useRef(null)
 
+	// * Auth Context ကိုခေါ်သုံးခြင်း
+	const { currentUser } = useAuth()
+
 	// * (3) ဒီဖန်ရှင်လေးက Form ထဲကရလာတဲ့ ဒေတာတွေကို Firebase FireStore ထဲ ထည့်သွင်းခြင်းနဲ့
 	// * update ပြုလုပ်ခြင်းပဲ ဖြစ်ပါတယ်
 	const handleSubmit = async () => {
 		if (todos?.hasOwnProperty('timestamp')) {
 			// TODO: Update Data
 			const docRef = doc(db, 'chenTodos', todos.id)
-			const todoUpdated = { ...todos, timestamp: serverTimestamp() }
+			const todoUpdated = {
+				...todos,
+				timestamp: serverTimestamp(),
+			}
 
 			updateDoc(docRef, todoUpdated)
 
@@ -39,6 +46,7 @@ function TodoForm() {
 			// * - firestore ထဲကို ဒေတာထည့်သွင်းခြင်း
 			const docRef = await addDoc(collectionRef, {
 				...todos,
+				email: currentUser?.email,
 				timestamp: serverTimestamp(),
 			})
 

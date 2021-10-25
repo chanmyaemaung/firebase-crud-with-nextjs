@@ -5,11 +5,14 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { deleteDoc, doc } from '@firebase/firestore'
 import { db } from '@firebase/index'
 import { useContext } from 'react'
-import { TodoContext } from '@context/index'
+import { TodoContext } from '@context/MyTodoContext'
+import { useRouter } from 'next/router'
 
 function Todo({ id, title, details, timestamp }) {
 	// * Context Api ထဲက သတ်မှတ်ထားခဲ့ထဲ့ ဖန်ရှင်ကို ပြန်ခေါ်သုံးထားခြင်း
 	const { showAlert, setTodos } = useContext(TodoContext)
+
+	const router = useRouter()
 
 	// TODO: ဒေတာဖျက်ဖို့
 	const deleteTodo = async (id, e) => {
@@ -29,6 +32,13 @@ function Todo({ id, title, details, timestamp }) {
 		)
 	}
 
+	// * သက်ဆိုင်ရာ အိုင်ဒီအလိုက် ပိုစ့်ကိုကြည့်နိုင်အောင်
+	const seeMore = (id, e) => {
+		e.stopPropagation()
+
+		router.push(`/todos/${id}`)
+	}
+
 	return (
 		<ListItem
 			onClick={() => setTodos({ id, title, details, timestamp })}
@@ -43,17 +53,18 @@ function Todo({ id, title, details, timestamp }) {
 						<DeleteIcon />
 					</IconButton>
 					{/* နှိပ်လိုက်ရင် လက်ရှိရောက်နေတဲ ့ဒေတာကို ပြင်ဆင်ဖို့ */}
-					<IconButton color='info' title='ပြင်ဆင်ဖို့'>
+					<IconButton
+						onClick={(e) => seeMore(id, e)}
+						color='info'
+						title='ပြင်ဆင်ဖို့'
+					>
 						<MoreVertIcon />
 					</IconButton>
 				</>
 			}
 			sx={{ mt: 3, boxShadow: 3, bgcolor: '#FAFAFA' }}
 		>
-			<ListItemText
-				primary={title}
-				secondary={moment(timestamp).calendar()}
-			/>
+			<ListItemText primary={title} secondary={moment(timestamp).calendar()} />
 		</ListItem>
 	)
 }
