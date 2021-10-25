@@ -8,10 +8,12 @@ React ရဲ့ Context Api အသုံးပြုထားပြီး Create
 
 နမူနာ Live လွှင့်ထားတာကိုကြည့်ရှုနိုင်အောင်လို့ ပုံနှင့်တစ်ကွ Deploy လုပ်ထားတဲ့ Live Demo Url လေးကိုလည်း အလည်အပတ်သွားရောက်ပြီး ကြည့်ရှုနိုင်ပါတယ်။
 
+> Branch ကိုယ်စီခွဲပေးထားပြီး Authentication အပိုင်းလေ့လာချင်ရင် သက်ဆိုင်ရာ Branch အလိုက် ရေးဆွဲထားတာမို့ Git Branch ခွဲတွေကို စစ်ကြည့်ဖို့မမေ့ပါနဲ့။
+
 **[Check Demo](https://bit.ly/2ZhCvKZ)**
 
 <p align="center">
-<img src="https://i.imgur.com/f8IlEVv.png" />
+<img src="https://i.imgur.com/bSw7qey.png" />
 </p>
 
 #### Installation
